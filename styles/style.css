@@ -1,0 +1,123 @@
+* {
+    padding: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.terms table {
+    border:2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.terms th {
+    border:2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.terms td {
+    border:2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.task table {
+    border:1px solid black;
+    text-decoration: solid;
+    height: auto;
+    width: auto;
+}
+
+.task th {
+    border:1px solid black;
+    text-decoration: solid;
+    height: 35px;
+    width: auto+5px;
+}
+
+.task td {
+    border:1px solid black;
+    text-decoration: solid;
+    height: 35px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: auto;
+}
+
+.modes {
+    border: #6ba88ae6 solid 1.5px;
+    background-color: #a2f5c9;
+    padding: 2px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.modes:hover {
+    background-color: #6ba88ae6;
+}
+
+#formContact {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#gallery ul {
+    width: 100vw;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 4vw;
+}
+
+#gallery li {
+    list-style-type: none;
+    background-color: #eeeeee;
+    border: 1px solid #dddd;
+    padding: 10px;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+#gallery img {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    width: 375px;
+}
+
+@media only screen and (max-width: 959px) {
+    * {
+        display: block;
+        width: auto;
+    }   
+    
+    #gallery img {
+        max-height: 130vw;
+        max-width: 100%;
+        width: auto\10;
+        padding: 5px;
+        padding-right: 20px;
+    }
+
+    #gallery ul {
+        max-height: 200vw;
+        max-width: 100%;
+        height: fit-content;
+        width: auto\9;
+    }
+}

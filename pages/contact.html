@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <nav>
+        <table style="width:100%; background-color: #a2f5c9;">
+            <tr>
+                <th rowspan="3"><a href="../index.html">Home</a></th>
+                <th rowspan="3"><a href="inspo.html">Sketches</a></th>
+                <th rowspan="3"><a href="materials.html">Materials</a></th>
+                <th rowspan="3"><a href="learn.html">Learn</a></th>
+                <th rowspan="3"><a href="pattern.html">Pattern</a></th>
+                <th rowspan="3"><h4><a href="#">Contact Us</a></h4></th>
+                <th style="padding-top: 5px;"><button class="modes" id="defaultmodeBtn">Default Mode</button></th>
+            </tr>
+            <tr>
+                <th><button class="modes" id="darkmodeBtn">Dark Mode</button></th>
+            </tr>
+            <tr>
+                <th style="padding-bottom: 5px;"><button class="modes" id="grayscaleBtn">Grey Scale Mode</button></th>
+            </tr>
+        </table>
+    </nav>
+    <h2>Contact Us</h2>
+    <br>
+    <p>Do you have queries, problems or what to order a custom dragon? Email us below.</p>
+    <input type="checkbox" id="checkbox"><label>Contact Us</label>
+    <form id="formContact">
+        <label>Full Name: <input type="text" id="full_name"></label>
+        <br>
+        <label>Contact Email: <input type="text" id="email"></label>
+        <br>
+        <label>Email Details: <input type="text" id="details"></label>
+
+    </form>
+    <button id="sendcontactBtn">Send Mail</button>
+    <p id=""></p>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
