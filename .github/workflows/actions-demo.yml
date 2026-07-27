@@ -1,0 +1,58 @@
+name: Actions Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+env:
+  GREETING: Hello
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      message: ${{ steps.set-output.outputs.message }}
+
+    steps:
+      - name: Set Output
+        id: set-output
+        run: |
+          echo "message=World" >> $GITHUB_OUTPUT
+      - name: Echo Hello
+        run: echo "${{ env.GREETING }}"    
+
+  job2:
+    needs: job1  # This job depends on job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Output From Previous Job
+        run: echo "${{ needs.job1.outputs.message }}"
+
+      - name: Create Artifact
+        run: echo "Demo file" > demo.txt
+
+      - name: Upload Artifact
+        run: actions/upload-artifact@v4
+        with:
+          name: demo-artifact
+          path: demo.txt
+
+  matrix-demo:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        version: [1, 2, 3]
+
+    steps:
+      - name: Matrix Example
+        run: echo "Running version ${{ matrix.version }}"
+
+conditional-demo:
+  if: github.ref == 'refs/heads/main'
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Conditional Step
+      run: echo "Only runs on main branch"
