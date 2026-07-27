@@ -10,4 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Hello
-        run: echo "hello"
+        run: echo "Hello"
+  echo-save:
+  needs: [echo-hello]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Save
+        run: echo "Save"
