@@ -1,0 +1,13 @@
+name: Echo Hello
+
+on:
+  workflow_dispatch:  # Allows manual triggering
+  push:
+    branches: [ main ]  # Optional: Trigger on push to main branch
+
+jobs:
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello
+        run: echo "hello"
