@@ -33,7 +33,7 @@ jobs:
         run: echo "Demo file" > demo.txt
 
       - name: Upload Artifact
-        run: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: demo-artifact
           path: demo.txt
@@ -49,10 +49,10 @@ jobs:
       - name: Matrix Example
         run: echo "Running version ${{ matrix.version }}"
 
-conditional-demo:
-  if: github.ref == 'refs/heads/main'
-  runs-on: ubuntu-latest
+  job-conditional:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Conditional Step
-      run: echo "Only runs on main branch"
+    steps:
+      - name: Conditional Step
+        run: echo "Only runs on main branch"
