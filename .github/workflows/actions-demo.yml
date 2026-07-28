@@ -61,6 +61,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: LS Check
-        run: ls lart
+        run: ls -lart
     
     
