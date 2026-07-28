@@ -17,9 +17,9 @@ jobs:
           username: ${{ secrets.AZURE_VM_USER }}
           key: ${{ secrets.AZURE_VM_SSH_KEY }}
           script: |
-            cd ~/'Week 8' || git clone https://github.com/Niamh13/WebpageTask.git ~/'Week 8'
+            cd ~/WebpageTask || git clone https://github.com/Niamh13/WebpageTask.git ~/WebpageTask
 
-            cd ~/'Week 8'
+            cd ~/WebpageTask
 
             git pull origin main
 
