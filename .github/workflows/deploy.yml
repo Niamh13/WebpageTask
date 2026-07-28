@@ -10,19 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to Azure VM
+      - name: Deploy Static Site
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.AZURE_VM_HOST }}
           username: ${{ secrets.AZURE_VM_USER }}
           key: ${{ secrets.AZURE_VM_SSH_KEY }}
           script: |
-            git clone https://github.com/Niamh13/WebpageTask.git
+            if [ ! -d ~/WebpageTask ]; then
+              git clone https://github.com/Niamh13/WebpageTask.git ~/WebpageTask
+            fi
 
             cd ~/WebpageTask
-
             git pull origin main
 
-            npm install
+            sudo rm -rf /var/www/html/*
+            sudo cp -r ./* /var/www/html/
 
-            pm2 restart mathapp || pm2 start npm --name mathapp -- start
+            sudo systemctl restart nginx
