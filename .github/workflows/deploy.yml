@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.AZURE_VM_USER }}
           key: ${{ secrets.AZURE_VM_SSH_KEY }}
           script: |
-            cd ~/WebpageTask || git clone https://github.com/Niamh13/WebpageTask.git ~/WebpageTask
+            git clone https://github.com/Niamh13/WebpageTask.git
 
             cd ~/WebpageTask
 
