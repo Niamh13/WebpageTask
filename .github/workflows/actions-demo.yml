@@ -56,3 +56,11 @@ jobs:
     steps:
       - name: Conditional Step
         run: echo "Only runs on main branch"
+
+  LS_check:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: LS Check
+        run: ls lart
+    
+    
